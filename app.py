@@ -9,9 +9,12 @@ from verify import verify_token
 
 import os
 
-#VERIFY_TOKEN = '123456'
 VERIFY_TOKEN = verify_token
-#PORT = os.environ['PORT']
+
+
+PORT = os.environ['PORT']
+VERIFY_TOKEN = os.environ['VERIFY_TOKEN']
+
 count = [0]
 
 machine = TocMachine(
