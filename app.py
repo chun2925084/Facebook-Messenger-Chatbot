@@ -9,7 +9,6 @@ from verify import verify_token
 
 import os
 
-#VERIFY_TOKEN = '123456'
 VERIFY_TOKEN = verify_token
 #PORT = os.environ['PORT']
 count = [0]
@@ -131,6 +130,7 @@ def setup_webhook():
     mode = request.GET.get("hub.mode")
     token = request.GET.get("hub.verify_token")
     challenge = request.GET.get("hub.challenge")
+    print(token)
 
     if mode == "subscribe" and token == VERIFY_TOKEN:
         print("WEBHOOK_VERIFIED")
@@ -162,6 +162,6 @@ def show_fsm():
 
 
 if __name__ == "__main__":
-    run(host="localhost", port=8000, debug=True, reloader=True)
+    run(host="localhost", port=8080, debug=True, reloader=True)
     #run(host="0.0.0.0", port=PORT, debug=True, reloader=True)
     print(machine.state)
