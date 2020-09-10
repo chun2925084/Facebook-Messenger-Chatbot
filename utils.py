@@ -3,12 +3,13 @@
 import requests
 import json
 import os
-from verify import access_token
+# from verify import access_token
 
 GRAPH_URL = "https://graph.facebook.com/v2.6"
-#ACCESS_TOKEN = 'EAAMoXslsoiABAPU4awPFdWs9ZBB1Iv6vQZB6BQdL0beljvBnHgZBb8yZAQpDMCjVhjZAEmZAZCrcyFyVbRyHx6exsl3WVH20VP5UbBTNWZBCvG69YseVeV0LY0tuH5BPBZA2FrrTnvpQadjjaVSRsTp1OZCKZCnIVRTdPwv2Xwzi3Qcj03xZBKoi76j1'
-#ACCESS_TOKEN = "EAAMoXslsoiABAKnqwrPO8MOIUkqxyFfvO8XwDOt8gw5ZADVFcfBFl8mtcVzlX1gWJ8ukuNO5JSQ42ZAHhBm18zApMjxCb3LcqPdXyZBsraG9xZCY1B3GxhadbFhDu5fP0cznziV2kaOxH00S0amZBXLZAD52GcL6NrWnjM4CdEZAwZDZD" 
-ACCESS_TOKEN = access_token
+# ACCESS_TOKEN = access_token
+
+## for heroku
+ACCESS_TOKEN = os.environ['ACCESS_TOKEN']
 
 def send_text_message(id, text):
     url = "{0}/me/messages?access_token={1}".format(GRAPH_URL, ACCESS_TOKEN)
