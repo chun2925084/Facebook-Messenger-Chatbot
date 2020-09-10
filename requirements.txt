@@ -1,5 +1,5 @@
 bottle==0.12.18
-pygraphviz==1.5
+# pygraphviz==1.5
 requests==2.20.1
 transitions==0.6.9
 PyMySQL == 0.9.2
