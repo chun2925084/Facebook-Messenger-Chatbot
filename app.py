@@ -7,13 +7,38 @@ from transitions.extensions import GraphMachine
 
 from verify import verify_token
 
-import os
+from database_fun import create_database
 
-VERIFY_TOKEN = verify_token
+import os
+# import psycopg2
+
+# VERIFY_TOKEN = verify_token
 
 
 PORT = os.environ['PORT']
 VERIFY_TOKEN = os.environ['VERIFY_TOKEN']
+
+create_database()
+# DATABASE_URL = os.environ['DATABASE_URL']
+
+# conn = psycopg2.connect(DATABASE_URL, sslmode='require')  # Connect the Heroku database
+
+# cursor = conn.cursor()
+
+#         創造表格的SQL指令 = '''CREATE TABLE account(
+#            user_id serial PRIMARY KEY,
+#            username VARCHAR (50) UNIQUE NOT NULL,
+#            password VARCHAR (50) NOT NULL,
+#            email VARCHAR (355) UNIQUE NOT NULL,
+#            created_on TIMESTAMP NOT NULL,
+#            last_login TIMESTAMP
+#         );'''
+    
+#         cursor.execute(創造表格的SQL指令)
+#         conn.commit()
+
+#         cursor.close()
+#         conn.close()
 
 count = [0]
 
