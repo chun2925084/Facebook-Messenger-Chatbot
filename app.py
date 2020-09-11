@@ -18,7 +18,7 @@ import os
 PORT = os.environ['PORT']
 VERIFY_TOKEN = os.environ['VERIFY_TOKEN']
 
-# create_database()
+create_database()
 check_database()
 # DATABASE_URL = os.environ['DATABASE_URL']
 
