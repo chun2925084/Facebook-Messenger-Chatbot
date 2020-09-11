@@ -8,8 +8,8 @@ from utils import send_image_url
 # from database_connect import insert_data
 # from database_connect import update_solution
 # from database_connect import update_finish
-from useful_function import send_question
-from useful_function import send_solution
+# from useful_function import send_question
+# from useful_function import send_solution
 from google_ocr import produce_word
 
 
