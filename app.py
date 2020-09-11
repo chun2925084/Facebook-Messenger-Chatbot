@@ -5,7 +5,7 @@ from fsm import TocMachine
 
 from transitions.extensions import GraphMachine
 
-from verify import verify_token
+# from verify import verify_token
 
 from database_fun import create_database
 
