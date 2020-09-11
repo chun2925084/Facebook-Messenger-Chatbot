@@ -9,12 +9,12 @@ def create_database():
 
     cursor = conn.cursor()
 
-            SQL_order = '''CREATE TABLE account(
-                            subject, class, url, path, name, finish, solution
-                    );'''
-        
-            cursor.execute(SQL_order)
-            conn.commit()
+    SQL_order = '''CREATE TABLE account(
+                    subject, class, url, path, name, finish, solution
+            );'''
 
-            cursor.close()
-            conn.close()
+    cursor.execute(SQL_order)
+    conn.commit()
+
+    cursor.close()
+    conn.close()
