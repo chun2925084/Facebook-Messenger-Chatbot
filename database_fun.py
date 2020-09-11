@@ -13,12 +13,9 @@ def create_database():
     #             subject, class, url, path, name, finish, solution
     #             );'''
 
-    create_table_query = '''CREATE TABLE alpaca_training(
-        record_no serial PRIMARY KEY,
-        alpaca_name VARCHAR (50) NOT NULL,
-        training VARCHAR (50) NOT NULL,
-        duration INTERVAL NOT NULL,
-        date DATE NOT NULL
+    create_table_query = '''CREATE TABLE account(
+        subject serial PRIMARY KEY,
+        class VARCHAR (50) NOT NULL,
     );'''
 
     cursor.execute(create_table_query)
@@ -36,4 +33,4 @@ def check_database():
     conn = psycopg2.connect(DATABASE_URL, sslmode='require')
     cursor = conn.cursor()
 
-    cursor.execute("SELECT column_name, data_type FROM information_schema.columns WHERE table_name = 'alpaca_training'")
+    cursor.execute("SELECT column_name, data_type FROM information_schema.columns WHERE table_name = 'account'")
