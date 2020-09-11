@@ -9,11 +9,19 @@ def create_database():
 
     cursor = conn.cursor()
 
-    SQL_order = '''CREATE TABLE account(
-                    subject, class, url, path, name, finish, solution
-            );'''
+    # SQL_order = '''CREATE TABLE account(
+    #             subject, class, url, path, name, finish, solution
+    #             );'''
 
-    cursor.execute(SQL_order)
+    create_table_query = '''CREATE TABLE alpaca_training(
+        record_no serial PRIMARY KEY,
+        alpaca_name VARCHAR (50) NOT NULL,
+        training VARCHAR (50) NOT NULL,
+        duration INTERVAL NOT NULL,
+        date DATE NOT NULL
+    );'''
+
+    cursor.execute(create_table_query)
     conn.commit()
 
     cursor.close()
