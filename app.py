@@ -7,7 +7,7 @@ from transitions.extensions import GraphMachine
 
 # from verify import verify_token
 
-from database_fun import create_database
+from database_fun import create_database, check_database
 
 import os
 # import psycopg2
@@ -18,7 +18,8 @@ import os
 PORT = os.environ['PORT']
 VERIFY_TOKEN = os.environ['VERIFY_TOKEN']
 
-create_database()
+# create_database()
+check_database()
 # DATABASE_URL = os.environ['DATABASE_URL']
 
 # conn = psycopg2.connect(DATABASE_URL, sslmode='require')  # Connect the Heroku database

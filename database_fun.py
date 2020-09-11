@@ -26,3 +26,14 @@ def create_database():
 
     cursor.close()
     conn.close()
+
+def check_database():
+
+    DATABASE_URL = os.environ['DATABASE_URL']
+
+    DATABASE_URL = os.popen('heroku config:get DATABASE_URL -a chatbot-dev-dev-usovp1wjj977n9').read()[:-1]
+
+    conn = psycopg2.connect(DATABASE_URL, sslmode='require')
+    cursor = conn.cursor()
+
+    cursor.execute("SELECT column_name, data_type FROM information_schema.columns WHERE table_name = 'alpaca_training'")
